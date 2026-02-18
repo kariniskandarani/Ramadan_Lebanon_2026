@@ -1,0 +1,280 @@
+.zakat-calculator {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.zakat-calculator:hover {
+  box-shadow: 0 15px 40px rgba(8, 145, 178, 0.15);
+  transform: translateY(-2px);
+}
+
+.calculator-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+
+.calculator-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, #c9a961, #d4af37, #c9a961);
+  border-radius: 2px;
+}
+
+.calculator-header h2 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #c9a961 0%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.currency-selector {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.currency-selector label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.currency-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.currency-buttons button {
+  padding: 0.85rem 2.5rem;
+  border: 2px solid #e5e7eb;
+  background: white;
+  color: #4b5563;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.currency-buttons button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(8, 145, 178, 0.1);
+  transition: width 0.4s, height 0.4s;
+}
+
+.currency-buttons button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.currency-buttons button:hover {
+  border-color: #0891b2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(8, 145, 178, 0.2);
+}
+
+.currency-buttons button.active {
+  background: linear-gradient(135deg, #0891b2 0%, #14b8a6 100%);
+  color: white;
+  border-color: #0891b2;
+  box-shadow: 0 6px 20px rgba(8, 145, 178, 0.3);
+}
+
+.calculator-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.form-input:hover {
+  border-color: #d4af37;
+  background: white;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #0891b2;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.1);
+}
+
+.calculate-btn {
+  width: 100%;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #c9a961 0%, #d4af37 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  box-shadow: 0 8px 20px rgba(201, 169, 97, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calculate-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(201, 169, 97, 0.4);
+  background: linear-gradient(135deg, #d4af37 0%, #c9a961 100%);
+}
+
+.calculate-btn:active {
+  transform: translateY(-1px);
+}
+
+.zakat-result {
+  margin-top: 2rem;
+  padding: 2.5rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.zakat-result.has-zakat {
+  background: linear-gradient(135deg, #ecfeff 0%, #cffafe 50%, #a5f3fc 100%);
+  border: 3px solid #0891b2;
+}
+
+.zakat-result.no-zakat {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%);
+  border: 3px solid #d4af37;
+}
+
+.result-icon {
+  font-size: 3rem;
+}
+
+.result-text {
+  flex: 1;
+}
+
+.result-text h3 {
+  font-size: 1.5rem;
+  color: #0891b2;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.zakat-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0891b2;
+  margin: 1rem 0;
+}
+
+.result-note {
+  color: #666;
+  line-height: 1.6;
+}
+
+.nisab-info {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+  border-left: 4px solid #1e7e34;
+}
+
+.nisab-info h4 {
+  color: #1e7e34;
+  margin-bottom: 1rem;
+}
+
+.nisab-info p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.nisab-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nisab-info li {
+  padding: 0.5rem 0;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .zakat-calculator {
+    padding: 1.5rem;
+  }
+
+  .calculator-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .currency-buttons {
+    flex-direction: column;
+  }
+
+  .currency-buttons button {
+    width: 100%;
+  }
+
+  .zakat-result {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .zakat-amount {
+    font-size: 2rem;
+  }
+}

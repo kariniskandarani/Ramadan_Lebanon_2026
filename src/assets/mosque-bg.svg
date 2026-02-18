@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none" opacity="0.18">
+  <!-- Central Dome -->
+  <circle cx="600" cy="400" r="120" stroke="#1e3a8a" stroke-width="2"/>
+  <path d="M 480 400 Q 600 320 720 400" stroke="#1e3a8a" stroke-width="2" fill="none"/>
+  <circle cx="600" cy="320" r="15" fill="#1e3a8a"/>
+  <line x1="600" y1="305" x2="600" y2="250" stroke="#1e3a8a" stroke-width="2"/>
+  <path d="M 585 250 L 600 220 L 615 250 Z" fill="#1e3a8a"/>
+  
+  <!-- Left Minaret -->
+  <rect x="350" y="350" width="40" height="300" stroke="#1e3a8a" stroke-width="2" fill="none"/>
+  <circle cx="370" cy="340" r="25" stroke="#1e3a8a" stroke-width="2" fill="none"/>
+  <line x1="370" y1="315" x2="370" y2="250" stroke="#1e3a8a" stroke-width="2"/>
+  <path d="M 360 250 L 370 225 L 380 250 Z" fill="#1e3a8a"/>
+  <circle cx="370" cy="225" r="5" fill="#1e3a8a"/>
+  
+  <!-- Right Minaret -->
+  <rect x="810" y="350" width="40" height="300" stroke="#1e3a8a" stroke-width="2" fill="none"/>
+  <circle cx="830" cy="340" r="25" stroke="#1e3a8a" stroke-width="2" fill="none"/>
+  <line x1="830" y1="315" x2="830" y2="250" stroke="#1e3a8a" stroke-width="2"/>
+  <path d="M 820 250 L 830 225 L 840 250 Z" fill="#1e3a8a"/>
+  <circle cx="830" cy="225" r="5" fill="#1e3a8a"/>
+  
+  <!-- Left Side Dome -->
+  <circle cx="470" cy="480" r="60" stroke="#1e3a8a" stroke-width="2" fill="none"/>
+  <path d="M 410 480 Q 470 440 530 480" stroke="#1e3a8a" stroke-width="2" fill="none"/>
+  <circle cx="470" cy="440" r="8" fill="#1e3a8a"/>
+  
+  <!-- Right Side Dome -->
+  <circle cx="730" cy="480" r="60" stroke="#1e3a8a" stroke-width="2" fill="none"/>
+  <path d="M 670 480 Q 730 440 790 480" stroke="#1e3a8a" stroke-width="2" fill="none"/>
+  <circle cx="730" cy="440" r="8" fill="#1e3a8a"/>
+  
+  <!-- Main Building -->
+  <rect x="450" y="500" width="300" height="150" stroke="#1e3a8a" stroke-width="2" fill="none"/>
+  
+  <!-- Arched Entrance -->
+  <path d="M 550 650 L 550 580 Q 600 540 650 580 L 650 650" stroke="#1e3a8a" stroke-width="2" fill="none"/>
+  
+  <!-- Decorative Windows -->
+  <circle cx="500" cy="550" r="15" stroke="#1e3a8a" stroke-width="1.5" fill="none"/>
+  <circle cx="700" cy="550" r="15" stroke="#1e3a8a" stroke-width="1.5" fill="none"/>
+  
+  <!-- Islamic Patterns -->
+  <path d="M 600 500 L 590 520 L 610 520 Z" fill="#1e3a8a"/>
+  <path d="M 580 530 L 620 530" stroke="#1e3a8a" stroke-width="1"/>
+  
+  <!-- Ground -->
+  <line x1="100" y1="650" x2="1100" y2="650" stroke="#1e3a8a" stroke-width="3"/>
+  
+  <!-- Stars -->
+  <circle cx="200" cy="150" r="3" fill="#1e3a8a"/>
+  <circle cx="950" cy="200" r="2" fill="#1e3a8a"/>
+  <circle cx="150" cy="300" r="2" fill="#1e3a8a"/>
+  <circle cx="1050" cy="280" r="3" fill="#1e3a8a"/>
+  
+  <!-- Crescent Moon -->
+  <path d="M 900 100 Q 920 120 900 140 Q 910 120 900 100" fill="#1e3a8a"/>
+</svg>
