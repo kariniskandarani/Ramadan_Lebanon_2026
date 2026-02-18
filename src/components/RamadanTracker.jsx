@@ -18,6 +18,7 @@ const RamadanTracker = () => {
   const [completedDays, setCompletedDays] = useState([]);
   const [currentDay, setCurrentDay] = useState(1);
   const [quote, setQuote] = useState(RAMADAN_QUOTES[0]);
+  const [confirmReset, setConfirmReset] = useState(false);
 
   useEffect(() => {
     // Load saved progress from localStorage
@@ -54,10 +55,9 @@ const RamadanTracker = () => {
   };
 
   const resetProgress = () => {
-    if (window.confirm('هل تريد مسح كل التقدم؟ | Do you want to reset all progress?')) {
-      setCompletedDays([]);
-      localStorage.removeItem('ramadan-progress');
-    }
+    setCompletedDays([]);
+    localStorage.removeItem('ramadan-progress');
+    setConfirmReset(false);
   };
 
   return (
@@ -146,9 +146,19 @@ const RamadanTracker = () => {
       )}
 
       <div className="tracker-actions">
-        <button onClick={resetProgress} className="reset-btn">
-          🔄 إعادة تعيين | Reset Progress
-        </button>
+        {confirmReset ? (
+          <div className="reset-confirm">
+            <p className="reset-confirm-text">هل أنت متأكد؟ | Are you sure?</p>
+            <div className="reset-confirm-buttons">
+              <button onClick={resetProgress} className="confirm-yes-btn">✓ نعم | Yes</button>
+              <button onClick={() => setConfirmReset(false)} className="confirm-no-btn">✕ لا | No</button>
+            </div>
+          </div>
+        ) : (
+          <button onClick={() => setConfirmReset(true)} className="reset-btn">
+            🔄 إعادة تعيين | Reset Progress
+          </button>
+        )}
       </div>
 
       <div className="tracker-tips">

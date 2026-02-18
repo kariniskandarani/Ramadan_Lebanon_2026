@@ -95,7 +95,14 @@ const PrayerTimes = () => {
   };
 
   if (loading) {
-    return <div className="prayer-times loading">جاري التحميل... | Loading...</div>;
+    return (
+      <div className="prayer-times loading-card">
+        <div className="loading-spinner">
+          <div className="spinner-ring"></div>
+          <p className="loading-text">جاري التحميل... | Loading...</p>
+        </div>
+      </div>
+    );
   }
 
   return (

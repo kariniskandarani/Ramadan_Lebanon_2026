@@ -362,14 +362,28 @@
 }
 
 .no-results {
+  grid-column: 1 / -1;
   text-align: center;
-  padding: 3rem;
-  color: #999;
+  padding: 4rem 2rem;
+  background: rgba(255, 251, 243, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: 1px solid rgba(210, 190, 155, 0.35);
+  box-shadow: 0 8px 32px rgba(30, 58, 138, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  animation: cardSlideIn 0.5s ease-out;
+}
+
+.no-results-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
 }
 
 .no-results p {
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
 }
 
 @media (max-width: 768px) {

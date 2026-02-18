@@ -10,13 +10,51 @@ function App() {
 
   const renderContent = () => {
     switch (activeTab) {
-      case 'home':
+      case 'home': {
+        const ramadanStart = new Date('2026-02-18');
+        const today = new Date();
+        const daysPassed = Math.floor((today - ramadanStart) / (1000 * 60 * 60 * 24)) + 1;
+        const ramadanDay = Math.max(1, Math.min(30, daysPassed));
         return (
-          <>
-            <PrayerTimes />
-            <CharityList />
-          </>
+          <div className="home-dashboard">
+            <div className="home-welcome">
+              <h2 className="home-welcome-title">🌙 مرحباً بكم | Welcome</h2>
+              <p className="home-welcome-day">
+                اليوم <strong>{ramadanDay}</strong> من رمضان المبارك &nbsp;|&nbsp; Day <strong>{ramadanDay}</strong> of Ramadan
+              </p>
+            </div>
+            <div className="home-cards">
+              <div className="home-card" onClick={() => setActiveTab('prayer')}>
+                <div className="home-card-icon"><FaMosque size={36} /></div>
+                <h3 className="home-card-title">
+                  <span>مواقيت الصلاة</span>
+                  <span>Prayer Times</span>
+                </h3>
+                <p className="home-card-desc">أوقات الصلاة لـ 8 مدن لبنانية مع عداد للصلاة القادمة | Live prayer times for 8 Lebanese cities</p>
+                <span className="home-card-btn">عرض | View →</span>
+              </div>
+              <div className="home-card" onClick={() => setActiveTab('charities')}>
+                <div className="home-card-icon"><FaHandHoldingHeart size={36} /></div>
+                <h3 className="home-card-title">
+                  <span>تبرع الآن</span>
+                  <span>Donate Now</span>
+                </h3>
+                <p className="home-card-desc">جمعيات خيرية موثوقة في كل مناطق لبنان | Verified charities across all Lebanese regions</p>
+                <span className="home-card-btn">عرض | View →</span>
+              </div>
+              <div className="home-card" onClick={() => setActiveTab('tracker')}>
+                <div className="home-card-icon"><FaCheckSquare size={36} /></div>
+                <h3 className="home-card-title">
+                  <span>متتبع الصيام</span>
+                  <span>Fasting Tracker</span>
+                </h3>
+                <p className="home-card-desc">تتبع أيام صيامك وقيامك في رمضان | Track your fasting and prayers throughout Ramadan</p>
+                <span className="home-card-btn">عرض | View →</span>
+              </div>
+            </div>
+          </div>
         );
+      }
       case 'prayer':
         return <PrayerTimes />;
       case 'charities':
@@ -48,28 +86,28 @@ function App() {
           onClick={() => setActiveTab('home')}
         >
           <span className="nav-icon"><FaHome size={24} /></span>
-          <span className="nav-label">الرئيسية<br/>Home</span>
+          <span className="nav-label"><span className="nav-label-ar">الرئيسية</span><span className="nav-label-en">Home</span></span>
         </button>
         <button 
           className={`nav-button ${activeTab === 'prayer' ? 'active' : ''}`}
           onClick={() => setActiveTab('prayer')}
         >
           <span className="nav-icon"><FaMosque size={24} /></span>
-          <span className="nav-label">الصلاة<br/>Prayer</span>
+          <span className="nav-label"><span className="nav-label-ar">الصلاة</span><span className="nav-label-en">Prayer</span></span>
         </button>
         <button 
           className={`nav-button ${activeTab === 'charities' ? 'active' : ''}`}
           onClick={() => setActiveTab('charities')}
         >
           <span className="nav-icon"><FaHandHoldingHeart size={24} /></span>
-          <span className="nav-label">التبرعات<br/>Donate</span>
+          <span className="nav-label"><span className="nav-label-ar">التبرعات</span><span className="nav-label-en">Donate</span></span>
         </button>
         <button 
           className={`nav-button ${activeTab === 'tracker' ? 'active' : ''}`}
           onClick={() => setActiveTab('tracker')}
         >
           <span className="nav-icon"><FaCheckSquare size={24} /></span>
-          <span className="nav-label">المتتبع<br/>Tracker</span>
+          <span className="nav-label"><span className="nav-label-ar">المتتبع</span><span className="nav-label-en">Tracker</span></span>
         </button>
       </nav>
 

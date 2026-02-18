@@ -130,6 +130,7 @@ const CharityList = () => {
       <div className="charity-grid">
         {filteredCharities.length === 0 ? (
           <div className="no-results">
+            <div className="no-results-icon">🔍</div>
             <p>لا توجد جمعيات تطابق الفلاتر المحددة</p>
             <p>No charities match the selected filters</p>
           </div>
