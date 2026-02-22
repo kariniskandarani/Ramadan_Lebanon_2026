@@ -32,9 +32,15 @@ const PrayerTimes = () => {
 
   useEffect(() => {
     fetchPrayerTimes();
+  }, [selectedCity]);
+
+  useEffect(() => {
+    if (!prayerTimes) return;
+
+    updateCountdown();
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
-  }, [selectedCity]);
+  }, [prayerTimes]);
 
   const fetchPrayerTimes = async () => {
     setLoading(true);
@@ -61,7 +67,10 @@ const PrayerTimes = () => {
     const prayers = ['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
     
     for (let prayer of prayers) {
-      const [hours, minutes] = prayerTimes[prayer].split(':');
+      const prayerValue = prayerTimes[prayer];
+      if (!prayerValue) continue;
+
+      const [hours, minutes] = prayerValue.split(':');
       const prayerTime = new Date();
       prayerTime.setHours(parseInt(hours), parseInt(minutes), 0, 0);
 
@@ -79,6 +88,12 @@ const PrayerTimes = () => {
 
     // If no prayer left today, show Fajr tomorrow
     setNextPrayer('Fajr');
+    if (!prayerTimes.Fajr) {
+      setCountdown('');
+      setNextPrayer('');
+      return;
+    }
+
     const [hours, minutes] = prayerTimes.Fajr.split(':');
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);

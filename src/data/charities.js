@@ -51,8 +51,8 @@ export const charities = [
       ar: 'جمعية خيرية لبنانية رائدة توفر الرعاية الصحية والتعليم والمساعدات الغذائية'
     },
     phone: '+961 1 650000',
-    website: 'https://makassed.org.lb',
-    donationUrl: 'https://makassed.org.lb/donate',
+    website: 'https://www.makassed.org.lb',
+    donationUrl: 'https://www.makassed.org.lb/donate',
     address: 'Beirut, Lebanon',
     verified: true
   },
@@ -308,3 +308,4 @@ export const filterCharities = (region = null, category = null) => {
   
   return filtered;
 };
+

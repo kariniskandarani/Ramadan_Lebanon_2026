@@ -11,9 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background:
-    url('./assets/mosque-bg.svg') center center / 80% auto no-repeat fixed,
-    linear-gradient(135deg, #f0ece4 0%, #e8e2d8 50%, #ddd6c8 100%) fixed;
+  background: linear-gradient(135deg, #f0ece4 0%, #e8e2d8 50%, #ddd6c8 100%) fixed;
   min-height: 100vh;
   position: relative;
 }

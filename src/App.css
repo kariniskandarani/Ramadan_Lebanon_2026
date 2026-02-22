@@ -36,9 +36,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M600 0C400 40 200 40 0 0v120h1200V0c-200 40-400 40-600 0z" fill="%23ffffff" opacity="0.05"/></svg>');
-  background-size: cover;
-  opacity: 0.1;
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.05) 100%),
+    url('./assets/mosque-bg.svg') center 72% / 62% auto no-repeat,
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M600 0C400 40 200 40 0 0v120h1200V0c-200 40-400 40-600 0z" fill="%23ffffff" opacity="0.05"/></svg>') bottom center / cover no-repeat;
+  opacity: 0.2;
+  pointer-events: none;
 }
 
 .app-header::after {
@@ -50,6 +53,7 @@
   height: 200%;
   background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
   animation: headerPulse 4s ease-in-out infinite;
+  pointer-events: none;
 }
 
 @keyframes headerPulse {
@@ -60,6 +64,8 @@
 .header-content {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .app-title {
